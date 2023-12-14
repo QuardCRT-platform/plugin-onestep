@@ -1,3 +1,3 @@
-# Plugin template
+# Plugin OneStep
 
-Plugin template repository for QuardCRT.
+Plugin OneStep repository for QuardCRT.
