@@ -34,6 +34,7 @@ jobs:
 
       - name: Build all
         run: |
+          lrelease *.pro
           qmake -makefile
           make
 
@@ -41,4 +42,4 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           path: |
-            ./libhelloworld.dylib
+            ./libonestep.dylib

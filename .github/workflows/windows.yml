@@ -30,6 +30,7 @@ jobs:
 
       - name: Build all
         run: |
+          lrelease *.pro
           qmake -spec win32-g++
           mingw32-make -j8
 
@@ -37,4 +38,4 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           path: |
-            ./release/helloworld.dll
+            ./release/onestep.dll
