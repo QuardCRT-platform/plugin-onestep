@@ -10,7 +10,7 @@
 class OneStep : public PluginInterface
 {
     Q_OBJECT
-    Q_PLUGIN_METADATA(IID "org.quardCRT.PluginInterface" FILE "onestep.json")
+    Q_PLUGIN_METADATA(IID "org.quardCRT.PluginInterface" FILE "./plugininterface/plugininterface.json")
     Q_INTERFACES(PluginInterface)
 
 public:
