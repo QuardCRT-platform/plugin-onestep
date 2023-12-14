@@ -1,0 +1,10 @@
+<RCC>
+    <qresource prefix="/lang">
+        <file>onestep_zh_CN.qm</file>
+        <file>onestep_en_US.qm</file>
+    </qresource>
+    <qresource prefix="/icon">
+        <file>onestepwindow/eye.svg</file>
+        <file>onestepwindow/neye.svg</file>
+    </qresource>
+</RCC>
