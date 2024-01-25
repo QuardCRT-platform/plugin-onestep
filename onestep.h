@@ -5,7 +5,7 @@
 #include "onestepwindow.h"
 
 #define PLUGIN_NAME    "One Step"
-#define PLUGIN_VERSION "0.0.1"
+#define PLUGIN_VERSION "0.0.2"
 
 class OneStep : public PluginInterface
 {
@@ -24,8 +24,11 @@ public:
     QString name() { return PLUGIN_NAME; }
     QString version() { return PLUGIN_VERSION; }
 
-    QMenu *mainMenu() { return oneStepMenu; }
-    QAction *mainAction() { return nullptr; }
+    QMap<QString,void *> metaObject() {
+        QMap<QString,void *> ret;
+        ret.insert("QMenu", (void *)oneStepMenu);
+        return ret;
+    }
 
     QMenu *terminalContextMenu(QString selectedText, QString workingDirectory, QMenu *parentMenu) {Q_UNUSED(selectedText);Q_UNUSED(workingDirectory);Q_UNUSED(parentMenu); return nullptr;}
     QList<QAction *> terminalContextAction(QString selectedText, QString workingDirectory, QMenu *parentMenu);
