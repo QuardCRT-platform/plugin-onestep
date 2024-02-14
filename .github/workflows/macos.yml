@@ -43,3 +43,37 @@ jobs:
         with:
           path: |
             ./libonestep.dylib
+
+  macos_arm64:
+    runs-on: macos-14
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: true
+
+      - name: Install Qt
+        uses: jurplel/install-qt-action@v3
+        with:
+          version: '6.5.3'
+          modules: 'qt5compat'
+          aqtversion: ==3.1.7
+
+      - name: Install prerequisites
+        run: |
+          ruby - e  "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" < /dev/null  2 > /dev/null
+          brew install --build-from-source cmake
+
+      - name: Build all
+        run: |
+          lrelease *.pro
+          qmake -makefile
+          make
+          cp libonestep.dylib libonestep.arm64.dylib
+
+      - name: Upload build asserts
+        uses: actions/upload-artifact@v4
+        with:
+          path: |
+            ./libonestep.arm64.dylib
+          
