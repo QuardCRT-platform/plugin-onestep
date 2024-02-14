@@ -41,6 +41,7 @@ jobs:
       - name: Upload build asserts
         uses: actions/upload-artifact@v4
         with:
+          name: libonestep
           path: |
             ./libonestep.dylib
 
@@ -74,6 +75,7 @@ jobs:
       - name: Upload build asserts
         uses: actions/upload-artifact@v4
         with:
+          name: libonestep_arm64
           path: |
             ./libonestep.arm64.dylib
           
