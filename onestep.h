@@ -5,7 +5,7 @@
 #include "onestepwindow.h"
 
 #define PLUGIN_NAME    "One Step"
-#define PLUGIN_VERSION "0.0.2"
+#define PLUGIN_VERSION "0.0.3"
 
 class OneStep : public PluginInterface
 {

@@ -27,7 +27,7 @@ int OneStep::init(QMap<QString, QString> params, QWidget *parent)
         oneStepWindow->setConfig("","","",22);
         oneStepWindow->show();
     });
-    connect(editOneStepAction,&QAction::triggered,this,[&](){
+    connect(editOneStepAction,&QAction::triggered,this,[&,parent](){
         QStringList stepNameList;
         foreach(OneStepWindow::Config data, oneStepList) {
             stepNameList.append(data.stepName);
@@ -44,7 +44,7 @@ int OneStep::init(QMap<QString, QString> params, QWidget *parent)
             }
         }
     });
-    connect(removeOneStepAction,&QAction::triggered,this,[&](){
+    connect(removeOneStepAction,&QAction::triggered,this,[&,parent](){
         QStringList stepNameList;
         foreach(OneStepWindow::Config data, oneStepList) {
             stepNameList.append(data.stepName);
@@ -65,7 +65,7 @@ int OneStep::init(QMap<QString, QString> params, QWidget *parent)
         emit writeSettings("OneStep","oneStepList", QVariant::fromValue(byteArray));
     });
 
-    connect(oneStepWindow,&OneStepWindow::accepted,this,[&](){
+    connect(oneStepWindow,&OneStepWindow::accepted,this,[&,parent](){
         OneStepWindow::Config newData = oneStepWindow->getConfig();
         if(newData.stepName.isEmpty()) {
             QMessageBox::warning(parent,tr("One Step"),tr("Step name can not be empty!"));
