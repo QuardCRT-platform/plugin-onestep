@@ -6,6 +6,7 @@
 
 #define PLUGIN_NAME    "One Step"
 #define PLUGIN_VERSION "0.0.3"
+#define PLUGIN_WEBSITE "https://github.com/QuardCRT-platform/plugin-onestep"
 
 class OneStep : public PluginInterface
 {
@@ -27,6 +28,7 @@ public:
     QMap<QString,void *> metaObject() {
         QMap<QString,void *> ret;
         ret.insert("QMenu", (void *)oneStepMenu);
+        ret.insert("website", (void *)(&m_website));
         return ret;
     }
 
@@ -35,6 +37,7 @@ public:
 
 private:
     OneStepWindow *oneStepWindow;
+    QString m_website = QString(PLUGIN_WEBSITE);
     QMenu *oneStepMenu;
     QAction *addOneStepAction;
     QAction *editOneStepAction;
