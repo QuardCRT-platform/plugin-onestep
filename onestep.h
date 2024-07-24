@@ -5,7 +5,7 @@
 #include "onestepwindow.h"
 
 #define PLUGIN_NAME    "One Step"
-#define PLUGIN_VERSION "0.0.3"
+#define PLUGIN_VERSION "0.0.4"
 #define PLUGIN_WEBSITE "https://github.com/QuardCRT-platform/plugin-onestep"
 
 class OneStep : public PluginInterface
