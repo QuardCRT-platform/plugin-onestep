@@ -39,7 +39,7 @@ jobs:
           make
 
       - name: Upload build asserts
-        uses: actions/upload-artifact@v5
+        uses: actions/upload-artifact@v6
         with:
           name: libonestep
           path: |
@@ -73,7 +73,7 @@ jobs:
           cp libonestep.dylib libonestep.arm64.dylib
 
       - name: Upload build asserts
-        uses: actions/upload-artifact@v5
+        uses: actions/upload-artifact@v6
         with:
           name: libonestep_arm64
           path: |
